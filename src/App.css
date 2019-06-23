@@ -1,15 +1,15 @@
-.App {
+
+:root{
+  --height:700px;
+  --width:1500px;
+}
+.cryptoPriceApp {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
 
 .App-header {
-  background-color: #282c34;
+  background-color: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,17 +17,91 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
+
+  
 }
 
-.App-link {
-  color: #61dafb;
+
+
+#displayWindow{
+  height:var(--height);
+  width:var(--width);
+  background-color:grey;
+  box-shadow: 5px 10px #413737;
+  border-radius:10px;
+  position:relative;
+}
+#tab1{
+  height:28px;
+  width:70px;
+  background-color:grey;
+  position:absolute;
+  top:17px;
+  left:300px;
+  border-radius:10px;
+  font-size:10px;
+  text-align:center;
+
+}
+#tab2{
+height:28px;
+width:70px;
+background-color:grey;
+position:absolute;
+top:17px;
+left:230px;
+border-radius:10px;
+font-size:10px;
+text-align:center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+#prices-container{
+  background-color:#070808;  
+  height:100%;
+  width:100%;
+  border-radius:10px;
+  display:flex;
+  justify-content: space-between;
 }
+#dropDownContainer{
+
+  position: absolute;
+  display:flex;
+ font-family:monospace;
+ letter-spacing: 2px;
+  width:442px;
+  height:50px;
+  background-color:black;
+  color:#ffffff;
+  font-size:20px; 
+  left:700px;
+  top:5px;  
+  justify-content:space-between
+}
+
+#chart{
+ margin-top:50px;
+
+ margin-left:5px;
+ width:75%;
+ height:90%;
+ display:block;
+}
+
+#displaySelection{
+  position: absolute;
+  display:flex;
+ font-family:monospace;
+ letter-spacing: 2px;
+  width:500px;
+  height:40px;
+  background-color:black;
+  color:#ffffff;
+  font-size:20px; 
+  left:60px;
+  top:5px;
+}
+
