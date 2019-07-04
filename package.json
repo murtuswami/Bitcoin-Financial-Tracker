@@ -32,7 +32,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ],
-    "homepage": "https://murtuswami.github.io/Bitcoin-Financial-Tracker"
+    "homepage": "https://murtuswami.github.io/crypto-coin-tracker"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1"
