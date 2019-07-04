@@ -14,18 +14,18 @@ class Chart extends React.Component {
  
     render(){
        if(typeof this.props.start != "string"&& typeof this.props.end != "string"){
-        let sMonth = this.props.start.getMonth().toString();
+        let sMonth = (this.props.start.getMonth()+1).toString();
         if(sMonth.length ==1){sMonth = "0"+ sMonth}
         let sDay = this.props.start.getDate().toString();
         if(sDay.length ==1){sDay = "0"+ sDay}
-        let eMonth = this.props.end.getMonth().toString();
+        let eMonth = (this.props.end.getMonth() +1).toString();
         if(eMonth.length ==1){eMonth = "0"+ eMonth}
         let eDay = this.props.end.getDate().toString();
         if(eDay.length ==1){eDay = "0"+ eDay}
         console.log(typeof this.props.start);
         let inputStart = this.props.start.getFullYear().toString() + "-" + sMonth + "-" + sDay;
         let inputEnd = this.props.end.getFullYear().toString() + "-" + eMonth + "-" + eDay;
-
+        console.log(this.props.end);
         drawChart(inputStart,inputEnd);
         
     

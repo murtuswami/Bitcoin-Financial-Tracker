@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 
 const createChart = (start,end)=>{
-   
+   console.log(start +" "+ end);
 d3.json('https://api.coindesk.com/v1/bpi/historical/close.json?start='+start+'&end='+end).then(
     (data)=>{
         let dataAsArray =[];
@@ -59,30 +59,31 @@ focus.append("circle")
 .attr("r", 4);
 
 svg.append("rect")                                     
-        .attr("width", width)                             
-        .attr("height", height)                         
+        .attr("width", width +"px")                             
+        .attr("height", height + "px")                         
         .style("pointer-events", "all")                   
         .on("mouseover", function() { focus.style("display", null); })
         .on("mouseout", function() { focus.style("display", "none"); })
         .on("mousemove", mousemove)
-        .attr("opacity","0.0");                 
+        .attr("opacity","0.0").attr("fill","red")         
 
 var bisectDate = d3.bisector(function(d) { return d.date; }).left; // **
   function mousemove() { 
         
-        var x0 = x.invert(d3.mouse(this)[0]),             
-            i = bisectDate(data, x0, 1),                  
-            d0 = data[i - 1],                            
-            d1 = data[i],                                 
-            d = x0 - d0.date > d1.date - x0 ? d1 : d0;   
+        var x0 = x.invert(d3.mouse(this)[0]);            
+        var   i = bisectDate(data, x0, 1);
+        if(data[i] != undefined && data[i-1] != undefined)     {   
+        var   d0 = data[i - 1];                      
+        var    d1 = data[i];                             
+         var   d = x0 - d0.date > d1.date - x0 ? d1 : d0;   
         console.log(d.date.getFullYear());
         focus.select("circle.y")                        
             .attr("transform",                             
                   "translate(" + x(d.date) + "," +        
                                  y(d.value) + ")")
                                  ;     
-    d3.select("#displaySelection").html("Date:" + d.date.getDate().toString() + "-" + d.date.getMonth().toString()+ "-" + d.date.getFullYear().toString() + "   Value:" + d.value +" USD")
-    
+    d3.select("#displaySelection").html("Date:" + d.date.getDate().toString() + "-" + (d.date.getMonth()+1).toString()+ "-" + d.date.getFullYear().toString() + "   Value:" + d.value +" USD")
+    }   
                                  
                             
     }

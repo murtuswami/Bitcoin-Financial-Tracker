@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Prices from './Prices'
+import Convertor from './Convertor'
+import News from './news'
 
 class App extends React.Component {
   constructor(props){
@@ -20,7 +22,10 @@ class App extends React.Component {
       innerCode =<Prices />
       break;
       case "Convertor":
-      innerCode = (<div>CONVERTORDETECTED</div>);
+      innerCode = <Convertor />
+      break;
+      case "News":
+      innerCode = <News />
       break;
     }
     return (
@@ -28,6 +33,7 @@ class App extends React.Component {
         <header className="App-header">
         <button id = "tab1" value ="Prices" onClick = {this.changeTab}>Prices</button>
         <button id = "tab2" value = "Convertor" onClick = {this.changeTab}>Convertor</button>
+        <button id = "tab3" value = "News" onClick = {this.changeTab}>News</button>
         <div id ="displayWindow">
         {innerCode}
         </div>
