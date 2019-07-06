@@ -31,9 +31,12 @@ class App extends React.Component {
     return (
       <div className="CryptoPriceApp">
         <header className="App-header">
-        <button id = "tab1" value ="Prices" onClick = {this.changeTab}>Prices</button>
-        <button id = "tab2" value = "Convertor" onClick = {this.changeTab}>Convertor</button>
-        <button id = "tab3" value = "News" onClick = {this.changeTab}>News</button>
+          <div className = "navBar">
+            <button id = "tab1" className ="tab" value ="Prices" onClick = {this.changeTab}>Prices</button>
+            <button id = "tab2" className ="tab" value = "Convertor" onClick = {this.changeTab}>Convertor</button>
+            <button id = "tab3" className ="tab" value = "News" onClick = {this.changeTab}>News</button>
+          </div>
+
         <div id ="displayWindow">
         {innerCode}
         </div>
